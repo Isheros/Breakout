@@ -36,10 +36,10 @@ class BuildExe:
         self.project_name = "Breakout"
  
         #Project url
-        self.project_url = "about:none"
+        self.project_url = "..."
  
         #Version of program
-        self.project_version = "0.1.0.0"
+        self.project_version = "1.0.0"
  
         #License of the program
         self.license = "GPL"

@@ -1,18 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# Pygame
+from pygame.locals import *
 # Engine
 from Core.funciones import *
 from Core.director import *
-from pygame.locals import *
-
 # Juego
-from scene_intro import *
+from scene_intro import SceneIntro
 
 def main():
-    #Inicializa director y primera escena
+    # Inicializa director y primera escena.
     dir = Director()
-    #Pasa a la primera escena y empieza el bucle
+    # Pasa a la primera escena y empieza el bucle.
     dir.change_scene(SceneIntro(dir))
     dir.loop()
 

@@ -1,30 +1,32 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# Pygame
+from pygame.locals import *
 # Engine
 from Core.funciones import *
-from pygame.locals import *
 
 # Clases
 # ---------------------------------------------------------------------
 class Puntos:
+    """Maneja los puntos."""
     def __init__(self):
         self.puntos = 0
         
-    # Obtiene el total de puntos
     def getPuntos(self):
+        """Obtiene el cuantos puntos llevas."""
         return self.puntos
     
-    # Agrega puntos
     def addPuntos(self,add):
+        """Añade puntos al score."""
         self.puntos += add
     
-    # Resta Puntos
     def resPuntos(self,res):
+        """Resta puntos del score."""
         self.puntos -= res
         
-    # Dibuja en pantalla el total de Puntos
     def draw(self,screen):
+        """Dibuja en pantalla tu score."""
         gameprint('Puntuación:   ' + str(self.puntos),WIDTH/2+100,2,screen,False)
 # ---------------------------------------------------------------------
 

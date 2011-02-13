@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# Pygame
+from pygame.locals import *
 # Engine
 from Core.funciones import *
-from pygame.locals import *
-
 # Juego
 from brick import *
 

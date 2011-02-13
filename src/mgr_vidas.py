@@ -1,34 +1,36 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# Pygame
+from pygame.locals import *
 # Engine
 from Core.funciones import *
-from pygame.locals import *
 
 # Clases
 # ---------------------------------------------------------------------
 class Vidas:
+    """Maneja las vidas."""
     def __init__(self):
         self.vidas = 3
     
-    # Establece vidas
     def setVidas(self,vidas):
+        """Establece las vidas."""
         self.vidas = vidas
         
-    # Retorna cuantas vidas quedan
     def getVidas(self):
+        """Devuelve cuantas vidas hay."""
         return self.vidas
     
-    # Agrega una vida
     def addVidas(self):
+        """Agrega una vida."""
         self.vidas += 1
-    
-    # Resta una vida
+        
     def resVidas(self):
+        """Resta una vida."""
         self.vidas -= 1
         
-    # Dibuja en pantalla el total de vidas
     def draw(self,screen):
+        """Dibuja en pantalla cuantas vidas quedan."""
         gameprint('Vidas:   ' + str(self.vidas),WIDTH/2-200,2,screen,False)
 # ---------------------------------------------------------------------
 

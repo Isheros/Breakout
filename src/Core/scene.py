@@ -3,7 +3,9 @@
 
 # Módulos
 import sys
+# Pygame
 from pygame.locals import *
+# Engine
 from funciones import *
 
 # Clases

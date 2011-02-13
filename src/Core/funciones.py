@@ -2,32 +2,42 @@
 # -*- coding: utf-8 -*-
 
 # Módulos
-import sys
+import cPickle
+# Pygame
 import pygame
-
+from pygame.locals import *
+# Engine
 from config import *
 
 # Funciones
 # ---------------------------------------------------------------------
+
 # Carga Imagenes
-def load_image(name,transparent=False):
+def load_image(name, transparent=False):
+    """Facilita el cargado de imagenes."""
     image = pygame.image.load(name).convert()
     if transparent:
-        color = image.get_at((0,0))
-        image.set_colorkey(color,0)
+        color = image.get_at((0, 0))
+        image.set_colorkey(color, 0)
     return image
 # ---------------------------------------------------------------------
+
 # Texto
-def gameprint(text,posx,posy,screen,shadow=True,font=F_COMFORTAA,color1=(255, 255, 255),color2=(155,155,155)):
-    font = pygame.font.Font(font,16)
-    ren = font.render(text,1,color1)
-    ren_shadow = font.render(text,1,color2)
+def gameprint(text, posx, posy, screen, shadow=True, font=F_COMFORTAA,
+              color1=(255, 255, 255), color2=(155,155,155)):
+    """Facilita el imprimir texto.
+    (Texto,PosX,PosY,Superficie,Sombra,Fuente,Color,ColorSombra)"""
+    font = pygame.font.Font(font, 16)
+    ren = font.render(text, 1, color1)
+    ren_shadow = font.render(text, 1, color2)
     if shadow:
-        screen.blit(ren_shadow,(posx+2,posy+2))
-    screen.blit(ren,(posx,posy))
+        screen.blit(ren_shadow,(posx + 2, posy + 2))
+    screen.blit(ren, (posx, posy))
 # ---------------------------------------------------------------------
+
 # Colisiones
-def checkCollision(object1,object2):
+def checkCollision(object1, object2):
+    """Chequea colisiones."""
     
     if object1.getCheckCollision() and object2.getCheckCollision():
         x1 = object1.getPosX()
@@ -45,6 +55,24 @@ def checkCollision(object1,object2):
             return True
     return False
 # ---------------------------------------------------------------------
+
+# Carga objetos
+def loadFile(filename):
+    """Carga archivos externos."""
+    archivo = open(filename, 'r')
+    fileloaded = cPickle.load(archivo)
+    archivo.close()
+    return fileloaded
+# ---------------------------------------------------------------------
+
+# Salva objetos
+def saveFile(filename, var):
+    """Guarda archivos externos."""
+    archivo = open(filename, 'w')
+    cPickle.dump(var, archivo)
+    archivo.close()
+# ---------------------------------------------------------------------
+
 def main():
     return 0
 

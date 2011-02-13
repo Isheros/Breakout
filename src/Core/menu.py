@@ -1,16 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Módulos
-import pygame
-import sprite
-
-from funciones import *
+# Pygame
 from pygame.locals import *
+# Engine
+from funciones import *
 
 # Clases
 # ---------------------------------------------------------------------
 class Opcion:
+    
     def __init__(self, opcion, x, y,paridad,funcion):
         # Inicializa colores de Opcion (no implementado)
         self.color_normal = (255,255,255)
@@ -39,8 +38,10 @@ class Opcion:
     def draw(self, screen):
         # Dibuja en pantalla la opcion
         gameprint(self.opcion,self.rectx,self.recty,screen,color1=self.color)
+        
 # ---------------------------------------------------------------------
 class Cursor:
+    
     def __init__(self, x, y, dy):
         # Imagen del cursor
         self.image = load_image(FRAMEWORK+'select.png',True)
@@ -63,8 +64,10 @@ class Cursor:
     def draw(self, screen):
         # Dibuja en pantalla el cursor
         screen.blit(self.image, self.rect)
+        
 # ---------------------------------------------------------------------
 class Menu:
+    
     def __init__(self, opciones,x,y):
         self.opciones = []
         self.x = x
@@ -118,6 +121,7 @@ class Menu:
         for opcion in self.opciones:
             opcion.draw(screen)
 # ---------------------------------------------------------------------
+
 def main():
     return 0
 
