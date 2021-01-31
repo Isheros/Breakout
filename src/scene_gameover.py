@@ -10,16 +10,13 @@ from config import *
 # Juego
 from scene_highscores import *
 
-
-# Clases
-# ---------------------------------------------------------------------
 class SceneOver(Scene):
     """Escena de GameOver, aqui es donde termina el juego
     y regresa al menu."""
     def __init__(self,director):
         Scene.__init__(self, director)
         # Carga la imagen.
-        self.image = load_image(LOGOS + 'gameover.png')
+        self.image = load_image(LOGOS / 'gameover.png')
         # Para establecer transparencia.
         self.img_alpha = 0
         # Estado de la animacion de transparencia.
@@ -57,10 +54,3 @@ class SceneOver(Scene):
         screen.fill(0x000000)
         # Imprime imagen.
         screen.blit(self.image,(WIDTH/2-300,HEIGHT/2-300))
-# ---------------------------------------------------------------------
-
-def main():
-    return 0
-
-if __name__ == '__main__':
-    main()

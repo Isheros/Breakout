@@ -13,14 +13,12 @@ from mgr_puntuaciones import *
 from scene_gameover import *
 import scene_menu
 
-# Clases
-# ---------------------------------------------------------------------
 class SceneHighScores(Scene):
     """Escena de las altas puntuaciones, aqui se muestran las
     3 mejores puntuaciones."""
     def __init__(self, director):
         Scene.__init__(self, director)
-        self.frame = load_image(FRAMEWORK+"frame.png", True)
+        self.frame = load_image(FRAMEWORK / "frame.png", True)
         puntos = Puntuaciones()
         puntos.organize()
         self.first = puntos.first
@@ -48,10 +46,3 @@ class SceneHighScores(Scene):
         gameprint(str(self.first),WIDTH/2 + 30, HEIGHT/2 - 55, screen)
         gameprint(str(self.second),WIDTH/2 + 30, HEIGHT/2 - 10, screen)
         gameprint(str(self.third),WIDTH/2 + 30, HEIGHT/2 + 35, screen)
-# ---------------------------------------------------------------------
-
-def main():
-    return 0
-
-if __name__ == '__main__':
-    main()

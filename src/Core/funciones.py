@@ -2,25 +2,23 @@
 # -*- coding: utf-8 -*-
 
 # Módulos
-import cPickle
+import pickle
+from pathlib import Path
 # Pygame
 import pygame
 from pygame.locals import *
 # Engine
 from config import *
 
-# Funciones
-# ---------------------------------------------------------------------
-
 # Carga Imagenes
 def load_image(name, transparent=False):
     """Facilita el cargado de imagenes."""
+    print(name)
     image = pygame.image.load(name).convert()
     if transparent:
         color = image.get_at((0, 0))
         image.set_colorkey(color, 0)
     return image
-# ---------------------------------------------------------------------
 
 # Texto
 def gameprint(text, posx, posy, screen, shadow=True, font=F_COMFORTAA,
@@ -33,7 +31,6 @@ def gameprint(text, posx, posy, screen, shadow=True, font=F_COMFORTAA,
     if shadow:
         screen.blit(ren_shadow,(posx + 2, posy + 2))
     screen.blit(ren, (posx, posy))
-# ---------------------------------------------------------------------
 
 # Colisiones
 def checkCollision(object1, object2):
@@ -54,27 +51,18 @@ def checkCollision(object1, object2):
             ((y1 <= y2+h2+.5 and y1 > y2) or (y2 <= y1+h1+.5 and y2 > y1))):
             return True
     return False
-# ---------------------------------------------------------------------
 
 # Carga objetos
 def loadFile(filename):
     """Carga archivos externos."""
-    archivo = open(filename, 'r')
-    fileloaded = cPickle.load(archivo)
+    archivo = open(filename, 'rb')
+    fileloaded = pickle.load(archivo)
     archivo.close()
     return fileloaded
-# ---------------------------------------------------------------------
 
 # Salva objetos
 def saveFile(filename, var):
     """Guarda archivos externos."""
-    archivo = open(filename, 'w')
-    cPickle.dump(var, archivo)
+    archivo = open(filename, 'wb')
+    pickle.dump(var, archivo)
     archivo.close()
-# ---------------------------------------------------------------------
-
-def main():
-    return 0
-
-if __name__ == '__main__':
-    main()

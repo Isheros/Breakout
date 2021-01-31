@@ -7,10 +7,8 @@ import sys
 import pygame
 from pygame.locals import *
 # Engine
-from funciones import *
+from Core.funciones import *
 
-# Clases
-# ---------------------------------------------------------------------
 class Director:
     """La clase mas importante, es la que administra todo
        el juego, las escenas y sus metodos."""
@@ -59,10 +57,3 @@ class Director:
     def quit(self):
         """Sale de el juego."""
         self.quit_flag = True
-# ---------------------------------------------------------------------
-
-def main():
-    return 0
-
-if __name__ == '__main__':
-    main()

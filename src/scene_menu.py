@@ -19,18 +19,18 @@ class SceneMenu(Scene):
     def __init__(self, director):
         Scene.__init__(self, director)
         # Carga las imagenes.
-        self.frame = load_image(FRAMEWORK+"frame.png", True)
-        self.background = load_image(LOGOS+"breakout_logo.png")
+        self.frame = load_image(FRAMEWORK / "frame.png", True)
+        self.background = load_image(LOGOS / "breakout_logo.png")
         # Funciones del menu.
         def comenzar_juego():
             director.change_scene(SceneGame(director))
         def puntajes():
             director.change_scene(SceneHighScores(director))
         def mostrar_opciones():
-            archivo = open('Data\data.pkg', 'r')
-            puntajes = cPickle.load(archivo)
+            archivo = open('Data\data.pkg', 'rb')
+            puntajes = pickle.load(archivo)
             archivo.close()
-            print str(puntajes)
+            print(str(puntajes))
         def salir_del_programa():
             director.quit()
         # Menu.

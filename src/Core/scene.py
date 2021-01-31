@@ -6,10 +6,7 @@ import sys
 # Pygame
 from pygame.locals import *
 # Engine
-from funciones import *
-
-# Clases
-# ---------------------------------------------------------------------
+from Core.funciones import *
 
 class Scene:
     """Representa un escena abstracta del videojuego.
@@ -31,11 +28,3 @@ class Scene:
     def on_draw(self, screen):
         "Se llama cuando se quiere dibujar la pantalla."
         raise NotImplemented("Tiene que implementar el método on_draw.")
-
-# ---------------------------------------------------------------------
-
-def main():
-    return 0
-
-if __name__ == '__main__':
-    main()

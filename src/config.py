@@ -1,16 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+from pathlib import Path
 #Constantes
-WIDTH = 600
-HEIGHT = 700
+WIDTH = 1024
+HEIGHT = 900
 
 #Directorios
-RESOURCES = "Data/"
-GRAPHICS = "Data/Graphics/"
-FRAMEWORK = "Data/Graphics/Framework/"
-SPRITES = "Data/Graphics/Sprites/"
-LOGOS = "Data/Graphics/Logos/"
+RESOURCES = Path('.')/'Data'
+GRAPHICS = Path('.')/'Data'/'Graphics'
+FRAMEWORK = Path('.')/'Data'/'Graphics'/'Framework'
+SPRITES = Path('.')/'Data'/'Graphics'/'Sprites'
+LOGOS = Path('.')/'Data'/'Graphics'/'Logos'
 
 #Fuentes
 F_DEFAULT = "Data/Fonts/DroidSans.ttf"

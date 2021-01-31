@@ -6,8 +6,6 @@ from pygame.locals import *
 # Engine
 from Core.funciones import *
 
-# Clases
-# ---------------------------------------------------------------------
 class Puntos:
     """Maneja los puntos."""
     def __init__(self):
@@ -18,7 +16,7 @@ class Puntos:
         return self.puntos
     
     def addPuntos(self,add):
-        """Añade puntos al score."""
+        """AÃ±ade puntos al score."""
         self.puntos += add
     
     def resPuntos(self,res):
@@ -27,11 +25,4 @@ class Puntos:
         
     def draw(self,screen):
         """Dibuja en pantalla tu score."""
-        gameprint('Puntuación:   ' + str(self.puntos),WIDTH/2+100,2,screen,False)
-# ---------------------------------------------------------------------
-
-def main():
-    return 0
-
-if __name__ == '__main__':
-    main()
+        gameprint('PuntuaciÃ³n:   ' + str(self.puntos),WIDTH/2+100,2,screen,False)

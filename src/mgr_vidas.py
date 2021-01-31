@@ -6,12 +6,10 @@ from pygame.locals import *
 # Engine
 from Core.funciones import *
 
-# Clases
-# ---------------------------------------------------------------------
 class Vidas:
     """Maneja las vidas."""
-    def __init__(self):
-        self.vidas = 3
+    def __init__(self, vidas):
+        self.vidas = vidas
     
     def setVidas(self,vidas):
         """Establece las vidas."""
@@ -32,10 +30,3 @@ class Vidas:
     def draw(self,screen):
         """Dibuja en pantalla cuantas vidas quedan."""
         gameprint('Vidas:   ' + str(self.vidas),WIDTH/2-200,2,screen,False)
-# ---------------------------------------------------------------------
-
-def main():
-    return 0
-
-if __name__ == '__main__':
-    main()

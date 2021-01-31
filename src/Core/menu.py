@@ -4,12 +4,9 @@
 # Pygame
 from pygame.locals import *
 # Engine
-from funciones import *
+from Core.funciones import *
 
-# Clases
-# ---------------------------------------------------------------------
 class Opcion:
-    
     def __init__(self, opcion, x, y,paridad,funcion):
         # Inicializa colores de Opcion (no implementado)
         self.color_normal = (255,255,255)
@@ -38,13 +35,11 @@ class Opcion:
     def draw(self, screen):
         # Dibuja en pantalla la opcion
         gameprint(self.opcion,self.rectx,self.recty,screen,color1=self.color)
-        
-# ---------------------------------------------------------------------
+
 class Cursor:
-    
     def __init__(self, x, y, dy):
         # Imagen del cursor
-        self.image = load_image(FRAMEWORK+'select.png',True)
+        self.image = load_image(FRAMEWORK/'select.png',True)
         # Posicion del cursor
         self.rect = self.image.get_rect()
         self.rect.x = x
@@ -64,10 +59,8 @@ class Cursor:
     def draw(self, screen):
         # Dibuja en pantalla el cursor
         screen.blit(self.image, self.rect)
-        
-# ---------------------------------------------------------------------
+
 class Menu:
-    
     def __init__(self, opciones,x,y):
         self.opciones = []
         self.x = x
@@ -98,10 +91,10 @@ class Menu:
         # Si presiono Enter
         elif key[pygame.K_RETURN]:
             if key[pygame.K_RETURN] != oldkey[pygame.K_RETURN]:
-                # Invoca a la función asociada a la opción.
+                # Invoca a la funciï¿½n asociada a la opciï¿½n.
                 self.opciones[self.seleccionado].activar()
 
-        # Procura que el cursor esté entre las opciones permitidas
+        # Procura que el cursor estï¿½ entre las opciones permitidas
         if self.seleccionado < 0:
             self.seleccionado = 0
         elif self.seleccionado > self.total - 1:
@@ -120,10 +113,3 @@ class Menu:
         self.cursor.draw(screen)
         for opcion in self.opciones:
             opcion.draw(screen)
-# ---------------------------------------------------------------------
-
-def main():
-    return 0
-
-if __name__ == '__main__':
-    main()

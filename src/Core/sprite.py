@@ -5,10 +5,8 @@
 import pygame
 from pygame.locals import *
 # Engine
-from funciones import *
+from Core.funciones import *
 
-# Clases
-# ---------------------------------------------------------------------
 class Sprites(pygame.sprite.Sprite):
     """Representa a los sprites del juego."""
     def __init__(self):
@@ -52,9 +50,3 @@ class Sprites(pygame.sprite.Sprite):
     def draw(self,screen):
         """Dibuja al sprite en pantalla."""
         screen.blit(self.image,(self.getPosX(),self.getPosY()))
-# ---------------------------------------------------------------------
-def main():
-    return 0
-
-if __name__ == '__main__':
-    main()

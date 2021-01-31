@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Módulos
-import cPickle
+# Modulos
 # Pygame
 from pygame.locals import *
 # Engine
@@ -20,8 +19,6 @@ from mgr_puntuaciones import *
 
 from scene_gameover import *
 
-# Clases
-# ---------------------------------------------------------------------
 class SceneGame(Scene):
     """Escena del juego, esta es la escena donde se
     desarrolla todo el juego."""
@@ -34,8 +31,8 @@ class SceneGame(Scene):
         # Inicia Ladrillos.
         self.brick_mgr = BrickMgr()
         # Inicia Vidas.
-        self.vidas = Vidas()
-        self.vidas.setVidas(3)
+        self.vidas = Vidas(3)
+        # self.vidas.setVidas(3)
         # Inicia Puntos.
         self.puntos = Puntos()
     
@@ -64,11 +61,11 @@ class SceneGame(Scene):
             self.highscores.replace()
             self.director.change_scene(SceneOver(self.director))
         
-        # Si la bola es pegajosa.
+        # Si la bola es pegajosa
         if self.ball.getSticky():
             # La mueve junto con la pala.
-            self.ball.setPos(self.pad.getPosX()
-                             ,self.pad.getPosY()-self.pad.getHeight())
+            self.ball.setPos(self.pad.getPosX(), 
+                self.pad.getPosY() - self.pad.getHeight())
         
         # Si colisiona la bola con el pad.
         if checkCollision(self.ball,self.pad):
@@ -101,10 +98,3 @@ class SceneGame(Scene):
         self.vidas.draw(screen)
         # Dibuja en pantalla los Puntos.
         self.puntos.draw(screen)
-# ---------------------------------------------------------------------
-
-def main():
-    return 0
-
-if __name__ == '__main__':
-    main()

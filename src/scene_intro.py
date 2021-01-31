@@ -10,16 +10,14 @@ from config import *
 # Juego
 from scene_menu import *
 
-# Clases
-# ---------------------------------------------------------------------
 class SceneIntro(Scene):
     """Escena de introduccion, maneja las transicion de
     las imagenes de introduccion."""
     def __init__(self, director):
         Scene.__init__(self, director)
         # Carga las imagenes.
-        self.image1 = load_image(LOGOS+'pygame_logo.png')
-        self.image2 = load_image(LOGOS+'lalala_logo.png')
+        self.image1 = load_image(str(LOGOS / 'pygame_logo.png'))
+        self.image2 = load_image(str(LOGOS / 'lalala_logo.png'))
         self.img = 0
         # Para establecer transparencia.
         self.img_alpha = 0
@@ -79,10 +77,3 @@ class SceneIntro(Scene):
                     self.director.change_scene(SceneMenu(self.director))
             # Imprime la imagen.
             screen.blit(self.image2,(WIDTH/2-300,HEIGHT/2-300))
-# ---------------------------------------------------------------------
-
-def main():
-    return 0
-
-if __name__ == '__main__':
-    main()    

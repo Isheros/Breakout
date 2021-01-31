@@ -7,13 +7,11 @@ from pygame.locals import *
 from Core.funciones import *
 from Core.sprite import *
 
-# Clases
-# ---------------------------------------------------------------------
 class Brick(Sprites):
     """Maneja el comportamiento del ladrillo."""
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.image = load_image(SPRITES+"brick.png")
+        self.image = load_image(SPRITES/"brick.png")
         self.rect = self.image.get_rect()
         self.check_collision = True
         self.visible = True
@@ -33,10 +31,3 @@ class Brick(Sprites):
         visible."""
         if self.visible:
             screen.blit(self.image, self.rect)
-# ---------------------------------------------------------------------
-
-def main():
-    return 0
-
-if __name__ == '__main__':
-    main()

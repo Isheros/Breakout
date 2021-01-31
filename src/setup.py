@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Módulos
+# Modulos
 from cx_Freeze import setup, Executable
 
 # Modulos Excluidos

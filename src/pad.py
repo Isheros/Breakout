@@ -7,14 +7,12 @@ from pygame.locals import *
 from Core.funciones import *
 from Core.sprite import *
 
-# Clases
-# ---------------------------------------------------------------------
 class Pad(Sprites):
     """La clase del pad, maneja los movimientos y colisiones
     del pad."""
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.image = load_image(SPRITES + "pad.png", True)
+        self.image = load_image(SPRITES/"pad.png", True)
         self.rect = self.image.get_rect()
         self.check_collision = True
         self.rect.x = WIDTH/2 - 30
@@ -41,10 +39,3 @@ class Pad(Sprites):
         # Actualiza la posicion anterior.
         self.oldPosY = self.getPosY()
         self.oldPosX = self.getPosX()
-# ---------------------------------------------------------------------
-
-def main():
-    return 0
-
-if __name__ == '__main__':
-    main()

@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-
-# Módulos
+# Modulos
 import math
 # Pygame
 from pygame.locals import *
@@ -10,20 +9,19 @@ from pygame.locals import *
 from Core.funciones import *
 from Core.sprite import *
 
-# Clases
-# ---------------------------------------------------------------------
 class Ball(Sprites):
     """Clase bola, controla el comportamiento de la pelota
     su posicion en pantalla y la forma al rebotar."""
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.image = load_image(SPRITES+"ball.png", True)
+        # Al inicio estara pegada al pad.
+        self.is_sticky = True
+        self.image = load_image(SPRITES / 'ball.png', True)
         self.rect = self.image.get_rect()
         self.check_collision = True
         # Velocidad Inicial.
         self.speed = [0.4,-0.4]
-        # Al inicio estara pegada al pad.
-        self.is_sticky = True
+        
         # Las vidas y los puntos.
         self.resVida = False
         self.addPuntos = False
@@ -94,10 +92,3 @@ class Ball(Sprites):
         # Actualiza la posicion anterior.
         self.oldPosY = self.getPosY()
         self.oldPosX = self.getPosX()
-# ---------------------------------------------------------------------
-
-def main():
-    return 0
-
-if __name__ == '__main__':
-    main()

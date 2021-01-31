@@ -2,10 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Módulos
-from funciones import *
-
-# Clases
-# ---------------------------------------------------------------------
+from Core.funciones import *
 
 class Hero(pygame.sprite.Sprite):
 	def __init__(self):
@@ -14,9 +11,9 @@ class Hero(pygame.sprite.Sprite):
 		self.rect = self.image.get_rect()
 		self.anima = 0
 		self.rect.centerx = WIDTH / 2
-		self.rect.centery = HEIGHT / 2
+		self.rect.centery = HEIGHT / 2 
 		self.speed = [0.2, -0.2]
-#------------------------------------------------------------------------------ 
+
 	def anim(self, n1, n2, n3):
 		self.anima = self.anima + 1
 		if self.anima == 7:
@@ -28,7 +25,7 @@ class Hero(pygame.sprite.Sprite):
 		if self.anima == 30:
 			self.image = load_image(n1, True)
 			self.anima = 0
-#------------------------------------------------------------------------------ 
+
 	def move(self, time, keys):
 		if self.rect.top >= 0:
 			if keys[K_UP]:
@@ -49,15 +46,3 @@ class Hero(pygame.sprite.Sprite):
 			if keys[K_RIGHT]:
 				self.rect.centerx -= self.speed[1] * time
 				self.anim("Graphics/Hero/R1.png","Graphics/Hero/R2.png","Graphics/Hero/R3.png")
-# ---------------------------------------------------------------------
-
-# Funciones
-# ---------------------------------------------------------------------
-
-# ---------------------------------------------------------------------
-
-def main():	
-	return 0
-
-if __name__ == '__main__':
-	main()

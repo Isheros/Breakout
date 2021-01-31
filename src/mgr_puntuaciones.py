@@ -5,14 +5,12 @@
 from Core.funciones import *
 from pygame.locals import *
 
-# Clases
-# ---------------------------------------------------------------------
 class Puntuaciones:
     def __init__(self,puntuacion=0):
         self.puntos = puntuacion
         self.puntuacion = loadFile('Data\data.pkg')
         # Valores
-        self.values = self.puntuacion.values()
+        self.values = list(self.puntuacion.values())
         self.first = self.values[0]
         self.second = self.values[1]
         self.third = self.values[2]
@@ -31,10 +29,3 @@ class Puntuaciones:
                            '2-Lugar': self.second,
                            '3-Lugar': self.third}
         saveFile('Data\data.pkg',self.puntuacion)
-# ---------------------------------------------------------------------
-
-def main():
-    return 0
-
-if __name__ == '__main__':
-    main()

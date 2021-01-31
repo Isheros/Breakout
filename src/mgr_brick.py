@@ -14,8 +14,6 @@ BRICKS_FILES = 6
 START_POS_X = 5
 START_POS_Y = 100
 
-# Clases
-# ---------------------------------------------------------------------
 class BrickMgr():
     def __init__(self):
         self.brick=[]
@@ -43,11 +41,3 @@ class BrickMgr():
         for y in range(BRICKS_FILES):
             for x in range(BRICKS_PER_SIDE):
                 self.brick[y*BRICKS_PER_SIDE+x].draw(screen)
-                
-# ---------------------------------------------------------------------
-
-def main():
-    return 0
-
-if __name__ == '__main__':
-    main()
